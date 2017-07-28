@@ -5,12 +5,12 @@
 Summary:	C++ library for rendering OpenGL models stored in glTF format
 Summary(pl.UTF-8):	Biblioteka C++ do renderowania modeli OpenGL zapisanych w formacie glTF
 Name:		libgltf
-Version:	0.0.2
-Release:	6
+Version:	0.1.0
+Release:	1
 License:	MPL v2.0
 Group:		Libraries
-Source0:	http://dev-www.libreoffice.org/src/libgltf/%{name}-%{version}.tar.bz2
-# Source0-md5:	d63a9f47ab048f5009d90693d6aa6424
+Source0:	http://dev-www.libreoffice.org/src/libgltf/%{name}-%{version}.tar.gz
+# Source0-md5:	63ae962d0c436909979826fce0fca2fd
 URL:		http://www.libreoffice.org/
 BuildRequires:	GLM >= 0.9.0.0
 BuildRequires:	OpenGL-devel >= 3.0
@@ -110,17 +110,17 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog LICENSE NEWS README
-%attr(755,root,root) %{_libdir}/libgltf-0.0.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgltf-0.0.so.0
+%attr(755,root,root) %{_libdir}/libgltf-0.1.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgltf-0.1.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libgltf-0.0.so
-%{_includedir}/libgltf-0.0
-%{_pkgconfigdir}/libgltf-0.0.pc
+%attr(755,root,root) %{_libdir}/libgltf-0.1.so
+%{_includedir}/libgltf-0.1
+%{_pkgconfigdir}/libgltf-0.1.pc
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libgltf-0.0.a
+%{_libdir}/libgltf-0.1.a
 %endif
