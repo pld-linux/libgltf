@@ -15,11 +15,11 @@ URL:		http://www.libreoffice.org/
 BuildRequires:	GLM >= 0.9.0.0
 BuildRequires:	OpenGL-devel >= 3.0
 BuildRequires:	boost-devel >= 1.41.0
-BuildRequires:	glew-devel >= 1.8.0
+BuildRequires:	libepoxy-devel >= 1.3.1
 BuildRequires:	libstdc++-devel
 BuildRequires:	pkgconfig >= 1:0.20
 Requires:	OpenGL >= 3.0
-Requires:	glew >= 1.8.0
+Requires:	libepoxy >= 1.3.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -62,7 +62,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libgltf
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	GLM >= 0.9.0.0
-Requires:	glew-devel >= 1.8.0
+Requires:	libepoxy-devel >= 1.3.1
 Requires:	libstdc++-devel
 
 %description devel
