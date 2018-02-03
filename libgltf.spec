@@ -6,7 +6,7 @@ Summary:	C++ library for rendering OpenGL models stored in glTF format
 Summary(pl.UTF-8):	Biblioteka C++ do renderowania modeli OpenGL zapisanych w formacie glTF
 Name:		libgltf
 Version:	0.1.0
-Release:	1
+Release:	2
 License:	MPL v2.0
 Group:		Libraries
 Source0:	http://dev-www.libreoffice.org/src/libgltf/%{name}-%{version}.tar.gz
