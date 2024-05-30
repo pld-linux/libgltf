@@ -1,18 +1,18 @@
 #
 # Conditional build:
-%bcond_without	static_libs	# don't build static libraries
+%bcond_without	static_libs	# static library
 #
 Summary:	C++ library for rendering OpenGL models stored in glTF format
 Summary(pl.UTF-8):	Biblioteka C++ do renderowania modeli OpenGL zapisanych w formacie glTF
 Name:		libgltf
 Version:	0.1.0
-Release:	2
+Release:	3
 License:	MPL v2.0
 Group:		Libraries
 Source0:	http://dev-www.libreoffice.org/src/libgltf/%{name}-%{version}.tar.gz
 # Source0-md5:	63ae962d0c436909979826fce0fca2fd
 URL:		http://www.libreoffice.org/
-BuildRequires:	GLM >= 0.9.0.0
+BuildRequires:	GLM-devel >= 0.9.0.0
 BuildRequires:	OpenGL-devel >= 3.0
 BuildRequires:	boost-devel >= 1.41.0
 BuildRequires:	libepoxy-devel >= 1.3.1
@@ -61,7 +61,7 @@ Summary:	Header files for libgltf library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libgltf
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	GLM >= 0.9.0.0
+Requires:	GLM-devel >= 0.9.0.0
 Requires:	libepoxy-devel >= 1.3.1
 Requires:	libstdc++-devel
 
@@ -87,6 +87,8 @@ Statyczna biblioteka libgltf.
 %setup -q
 
 %build
+# "GLM_GTX_norm is an experimental extension" (used by glm/gtx/quaternion.hpp)
+CPPFLAGS="%{rpmcppflags} -DGLM_ENABLE_EXPERIMENTAL"
 %configure \
 	--disable-silent-rules \
 	%{?with_static_libs:--enable-static}
